@@ -43,7 +43,7 @@
   </TabsRoot>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { TabsRoot, TabsList, TabsTrigger, TabsContent } from "radix-vue";
 
