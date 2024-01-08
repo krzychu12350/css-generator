@@ -1,6 +1,10 @@
 <!-- GradientContainer.vue -->
 <template>
-  <div class="gradient-container" @click="animateGradient" :style="gradientStyle"></div>
+  <div
+    class="gradient-container rounded-md"
+    @click="animateGradient"
+    :style="gradientStyle"
+  ></div>
 </template>
 
 <script setup lang="ts">
@@ -22,10 +26,10 @@ const gradientStyle = computed(() => ({
 
 <style scoped>
 .gradient-container {
-  width: 50vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
   transition: background 2s ease-in-out;
   cursor: pointer;
-  position: relative;
+  /* position: relative; */
 }
 </style>

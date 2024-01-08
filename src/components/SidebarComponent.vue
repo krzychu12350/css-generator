@@ -1,15 +1,14 @@
 <template>
-  <div>
-    <nav
-      class="fixed z-40 top-0 left-0 w-full h-full border-r bg-white space-y-8 overflow-auto sm:w-80"
-    >
-      <div class="sticky top-0 space-y-8 bg-white">
-        <div class="h-20 flex items-center px-4 border-b md:px-8">
-          <a href="javascript:void(0)" class="flex-none">
-            <img src="https://floatui.com/logo.svg" width="140" class="mx-auto" />
-          </a>
-        </div>
-        <!-- <div class="px-4 md:px-8">
+  <nav
+    class="z-40 top-0 left-0 w-full border-r bg-white space-y-8 overflow-auto sm:w-80 h-screen"
+  >
+    <div class="sticky top-0 space-y-8 bg-white">
+      <div class="h-20 flex items-center px-4 border-b md:px-8">
+        <a href="javascript:void(0)" class="flex-none">
+          <img src="https://floatui.com/logo.svg" width="140" class="mx-auto" />
+        </a>
+      </div>
+      <!-- <div class="px-4 md:px-8">
           <div class="relative w-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,13 +29,13 @@
             />
           </div>
         </div> -->
-      </div>
-      <div class="text-[0.9rem] space-y-6">
-        <div class="">
-          <h3 class="pb-3 px-4 font-medium text-gray-800 md:px-8 hover:text-gray-900">
-            Gradient
-          </h3>
-          <!-- <div class="text-gray-600 px-4 md:px-8">
+    </div>
+    <div class="text-[0.9rem] space-y-6">
+      <div class="">
+        <h3 class="pb-3 px-4 font-medium text-gray-800 md:px-8 hover:text-gray-900">
+          Gradient
+        </h3>
+        <!-- <div class="text-gray-600 px-4 md:px-8">
             <ul>
               <li v-for="(item, index) in lessons.rustLessons" :key="index">
                 <a
@@ -47,42 +46,41 @@
               </li>
             </ul>
           </div> -->
-        </div>
-        <div class="cursor-pointer">
-          <h3 class="pb-3 px-4 font-medium text-gray-800 md:px-8 hover:text-gray-800">
-            Button
-          </h3>
-          <!-- <div class="text-gray-600 px-4 md:px-8">
-            <ul>
-              <li v-for="(item, index) in lessons.cargoLessons" :key="index">
-                <a
-                  :href="item.href"
-                  class="block w-full py-2 px-4 border-l hover:border-indigo-600 hover:text-gray-900 duration-150 text-gray-500"
-                  >{{ item.name }}</a
-                >
-              </li>
-            </ul>
-          </div> -->
-        </div>
-        <div>
-          <h3 class="pb-3 px-4 font-medium text-gray-800 md:px-8 hover:text-gray-900">
-            Section
-          </h3>
-          <!-- <div class="text-gray-600 px-4 md:px-8">
-            <ul>
-              <li v-for="(item, index) in lessons.cargoLessons" :key="index">
-                <a
-                  :href="item.href"
-                  class="block w-full py-2 px-4 border-l hover:border-indigo-600 hover:text-gray-900 duration-150 text-gray-500"
-                  >{{ item.name }}</a
-                >
-              </li>
-            </ul>
-          </div> -->
-        </div>
       </div>
-    </nav>
-  </div>
+      <div class="cursor-pointer">
+        <h3 class="pb-3 px-4 font-medium text-gray-800 md:px-8 hover:text-gray-800">
+          Button
+        </h3>
+        <!-- <div class="text-gray-600 px-4 md:px-8">
+            <ul>
+              <li v-for="(item, index) in lessons.cargoLessons" :key="index">
+                <a
+                  :href="item.href"
+                  class="block w-full py-2 px-4 border-l hover:border-indigo-600 hover:text-gray-900 duration-150 text-gray-500"
+                  >{{ item.name }}</a
+                >
+              </li>
+            </ul>
+          </div> -->
+      </div>
+      <div>
+        <h3 class="pb-3 px-4 font-medium text-gray-800 md:px-8 hover:text-gray-900">
+          Section
+        </h3>
+        <!-- <div class="text-gray-600 px-4 md:px-8">
+            <ul>
+              <li v-for="(item, index) in lessons.cargoLessons" :key="index">
+                <a
+                  :href="item.href"
+                  class="block w-full py-2 px-4 border-l hover:border-indigo-600 hover:text-gray-900 duration-150 text-gray-500"
+                  >{{ item.name }}</a
+                >
+              </li>
+            </ul>
+          </div> -->
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">

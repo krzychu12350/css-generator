@@ -1,50 +1,53 @@
 <template>
-  <SidebarComponent></SidebarComponent>
-  <div class="max-w-screen-xl mx-auto px-4 md:px-8 mt-4 mb-4">
+  <!-- <div class="flex">
+    <SidebarComponent></SidebarComponent>
+    <div class="flex justify-center items-center h-screen">
+      <GradientContainer class="ml-12 mt-12"></GradientContainer>
+    </div>
+  </div> -->
+  <div class="flex">
+    <div class="">
+      <SidebarComponent></SidebarComponent>
+    </div>
+    <div class="w-full h-screen flex items-center justify-center p-4 relative">
+      <GradientContainer class=""></GradientContainer>
+      <div class="absolute">
+        <div class="bg-white p-4 bg-opacity-20 rounded-md w-50">
+          <!-- <span class="text-white font-bold p-2">Control panel</span> -->
+          <ColorPickerComponent></ColorPickerComponent>
+          <DirectionPickerComponent></DirectionPickerComponent>
+          <Slider label="Speed"></Slider>
+          <Slider label="Zoom"></Slider>
+          <div class="flex p-4">
+            <button
+              className="p-2 float-right text-white duration-150 bg-indigo-600 rounded-md hover:bg-indigo-500 active:bg-indigo-700"
+            >
+              Generate
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-4 bg-opacity-20 rounded-md w-50 mt-4">
+          <TabsComponent></TabsComponent>
+          <div class="flex p-4">
+            <button
+              className="p-2 float-right text-white duration-150 bg-indigo-600 rounded-md hover:bg-indigo-500 active:bg-indigo-700"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="max-w-screen-xl mx-auto px-4 md:px-8 mt-4 mb-4">
     <h3 class="text-gray-800 text-xl font-bold sm:text-2xl">Gradient preview</h3>
     <p class="text-gray-600 mt-2">
       Choose colors, angles, and transitions to create eye-catching visual effects for
       your website.
     </p>
   </div>
-  <TabsComponent></TabsComponent>
-  <div class="max-w-md mx-auto px-4">
-    <h2 class="text-gray-800 font-medium">Pick your favorite color</h2>
-    <ul class="mt-4 flex items-center flex-wrap gap-4">
-      <li v-for="(item, idx) in colors" :key="idx" class="flex-none">
-        <label :for="item.bg" class="block relative w-8 h-8">
-          <input
-            :id="item.bg"
-            type="radio"
-            :checked="idx === 1"
-            name="color"
-            class="sr-only peer"
-          />
-          <span
-            :class="[
-              'inline-flex justify-center items-center w-full h-full rounded-full peer-checked:ring ring-offset-2 cursor-pointer duration-150',
-              item.bg,
-              item.ring,
-            ]"
-          ></span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-5 h-5 text-white absolute inset-0 m-auto z-0 pointer-events-none hidden peer-checked:block duration-150"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-        </label>
-      </li>
-    </ul>
-  </div>
+
+
 
   <div class="relative max-w-xs mx-auto mt-12">
     <svg
@@ -80,22 +83,15 @@
         class="w-full pl-2 pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
       />
     </div>
-    <Slider></Slider>
-  </div>
-  <GradientContainer class="w-50"></GradientContainer>
+    <Slider label="Speed"></Slider>
+    <Slider label="Zoom"></Slider>
+  </div> -->
 </template>
 <script setup lang="ts">
 import TabsComponent from "../components/TabsComponent.vue";
 import SidebarComponent from "../components/SidebarComponent.vue";
 import GradientContainer from "../components/GradientContainer.vue";
 import Slider from "../components/Silder.vue";
-import { ref } from "vue";
-
-const colors = ref([
-  { bg: "bg-[#2563EB]", ring: "ring-[#2563EB]" },
-  { bg: "bg-[#8B5CF6]", ring: "ring-[#8B5CF6]" },
-  { bg: "bg-[#DB2777]", ring: "ring-[#DB2777]" },
-  { bg: "bg-[#475569]", ring: "ring-[#475569]" },
-  { bg: "bg-[#EA580C]", ring: "ring-[#EA580C]" },
-]);
+import ColorPickerComponent from "../components/ColorPickerComponent.vue";
+import DirectionPickerComponent from "../components/DirectionPickerComponent.vue";
 </script>
