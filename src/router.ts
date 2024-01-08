@@ -5,7 +5,7 @@ import GetStarted from './views/GetStarted.vue';
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'home',component: Home },
-  { path: '/get-started', name:'get-started', component: GetStarted },
+  { path: '/getting-started', name:'get-started', component: GetStarted },
 ];
 
 const router = createRouter({
