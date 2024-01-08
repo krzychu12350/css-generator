@@ -11,7 +11,7 @@
     <ul
       class="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0"
     >
-      <li v-for="item in footerNavs" :key="item.id" class="hover:text-gray-800">
+      <li v-for="(item, key) in footerNavs" :key="key" class="hover:text-gray-800">
         <a href="{{item.href}}">
           {{ item.name }}
         </a>
@@ -70,40 +70,36 @@
   </footer>
 </template>
 
-<script lang="ts">
-export default {
-  data: function () {
-    return {
-      footerNavs: [
-        {
-          href: "javascript:void()",
-          name: "About",
-        },
-        {
-          href: "javascript:void()",
-          name: "Blog",
-        },
-        {
-          href: "javascript:void()",
-          name: "",
-        },
-        {
-          href: "javascript:void()",
-          name: "Team",
-        },
-        {
-          href: "javascript:void()",
-          name: "Careers",
-        },
+<script setup lang="ts">
+import { ref } from "vue";
 
-        {
-          href: "javascript:void()",
-          name: "Suuport",
-        },
-      ],
-    };
+const footerNavs = ref([
+  {
+    href: "javascript:void()",
+    name: "About",
   },
-};
+  {
+    href: "javascript:void()",
+    name: "Blog",
+  },
+  {
+    href: "javascript:void()",
+    name: "",
+  },
+  {
+    href: "javascript:void()",
+    name: "Team",
+  },
+  {
+    href: "javascript:void()",
+    name: "Careers",
+  },
+
+  {
+    href: "javascript:void()",
+    name: "Suuport",
+  },
+]);
 </script>
 
 <style scoped>
