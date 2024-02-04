@@ -84,9 +84,7 @@
               :key="index"
               class="text-gray-600 hover:text-indigo-600"
             >
-              <a :href="link.router">
-                {{ link.title }}
-              </a>
+              <router-link :to="link.router">{{ link.title }}</router-link>
             </li>
           </ul>
         </div>
