@@ -37,35 +37,37 @@
     </div>
     <div class="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
       <article
-        v-for="(items, index) in posts"
+        v-for="(items, index) in articles"
         :key="index"
         class="max-w-md mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"
       >
         <a>
           <img
-            :src="items.img"
+            :src="items.urlToImage"
             loading="lazy"
             :alt="items.title"
             class="w-full h-48 rounded-t-md"
           />
           <div class="flex items-center mt-2 pt-3 ml-4 mr-2">
-            <div class="flex-none w-10 h-10 rounded-full">
+            <!-- <div class="flex-none w-10 h-10 rounded-full">
               <img
                 :src="items.authorLogo"
                 :alt="items.authorName"
                 class="w-full h-full rounded-full"
               />
-            </div>
-            <div class="ml-3">
-              <span class="block text-gray-900">{{ items.authorName }}</span>
-              <span class="block text-gray-400 text-sm">{{ items.date }}</span>
+            </div> -->
+            <div class="">
+              <span class="block text-gray-900">{{ items.author }}</span>
+              <span class="block text-gray-400 text-sm">{{
+                new Date(items.publishedAt).toLocaleString()
+              }}</span>
             </div>
           </div>
           <div class="pt-3 ml-4 mr-2 mb-3">
             <h3 class="text-xl text-gray-900">
               {{ items.title }}
             </h3>
-            <p class="text-gray-400 text-sm mt-1">{{ items.desc }}</p>
+            <p class="text-gray-400 text-sm mt-1">{{ items.description }}</p>
           </div>
         </a>
       </article>
@@ -74,7 +76,8 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, ref, onMounted } from "vue";
+import { useHttpClient } from "../../composables/useHttpClient";
 
 const posts = reactive([
   {
@@ -122,6 +125,27 @@ const posts = reactive([
     href: "javascript:void(0)",
   },
 ]);
+
+const httpClient = useHttpClient("https://newsapi.org/v2");
+const articles = ref<Array<Object>>();
+
+const fetchData = async () => {
+  try {
+    const response: Object = await httpClient.get(
+      "/top-headlines?sources=techcrunch&apiKey=773bfe62012844d09705febd488ab643"
+    );
+    articles.value = response.articles;
+    console.log(articles.value);
+  } catch (error) {
+    // Handle error
+    console.error("Error fetching data:", error);
+  }
+};
+
+onMounted(() => {
+  // Fetch data on component mount if needed
+  fetchData();
+});
 
 //newsapi key 773bfe62012844d09705febd488ab643
 </script>
