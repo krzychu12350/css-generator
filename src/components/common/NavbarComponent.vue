@@ -75,7 +75,7 @@
             </li>
           </ul>
         </div>
-        <div class="flex-1">
+        <div class="flex-1 p-2">
           <ul
             class="justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0"
           >
