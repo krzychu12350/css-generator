@@ -1,2 +1,7 @@
-<template>AnimatedGradientGenerator</template>
-<script setup lang="ts"></script>
+<template>
+  <AnimatedGradient />
+</template>
+
+<script setup lang="ts">
+import AnimatedGradient from "./AnimatedGradient.vue";
+</script>
