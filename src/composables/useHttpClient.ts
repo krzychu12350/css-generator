@@ -1,7 +1,7 @@
 // src/composables/useHttpClient.ts
 
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
-import { ref, Ref, ComputedRef } from 'vue';
+// import { ref, Ref, ComputedRef } from 'vue';
 
 class HttpClient {
   private axiosInstance: AxiosInstance;
@@ -17,7 +17,7 @@ class HttpClient {
     try {
       const response: AxiosResponse<T> = await this.axiosInstance.get(url);
       return response.data;
-    } catch (error) {
+    } catch (error: any) {
       this.handleRequestError(error);
       throw error;
     }
