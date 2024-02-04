@@ -20,8 +20,7 @@
           <Slider label="Zoom"></Slider>
           <div class="flex p-4">
             <button
-              className="p-2 float-right text-white duration-150 bg-indigo-600 rounded-md hover:bg-indigo-500 active:bg-indigo-700"
-            >
+              className="p-2 float-right text-white duration-150 bg-indigo-600 rounded-md hover:bg-indigo-500 active:bg-indigo-700">
               Generate
             </button>
           </div>
@@ -30,8 +29,7 @@
           <TabsComponent></TabsComponent>
           <div class="flex p-4">
             <button
-              className="p-2 float-right text-white duration-150 bg-indigo-600 rounded-md hover:bg-indigo-500 active:bg-indigo-700"
-            >
+              className="p-2 float-right text-white duration-150 bg-indigo-600 rounded-md hover:bg-indigo-500 active:bg-indigo-700">
               Copy
             </button>
           </div>
