@@ -9,7 +9,7 @@
           </h3>
         </div>
       </div>
-      <form @submit.prevent="handleSubmit" class="space-y-5">
+      <form class="space-y-5">
         <div>
           <label class="font-medium"> Email </label>
           <input
@@ -75,3 +75,5 @@
     </div>
   </main>
 </template>
+
+<script setup lang="ts"></script>

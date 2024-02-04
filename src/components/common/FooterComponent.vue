@@ -331,29 +331,25 @@
   </footer>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      footerNavs: [
-        {
-          href: "javascript:void()",
-          name: "Terms",
-        },
-        {
-          href: "javascript:void()",
-          name: "License",
-        },
-        {
-          href: "javascript:void()",
-          name: "Privacy",
-        },
-        {
-          href: "javascript:void()",
-          name: "About us",
-        },
-      ],
-    };
+<script setup lang="ts">
+import { reactive } from "vue";
+
+const footerNavs = reactive([
+  {
+    href: "javascript:void()",
+    name: "Terms",
   },
-};
+  {
+    href: "javascript:void()",
+    name: "License",
+  },
+  {
+    href: "javascript:void()",
+    name: "Privacy",
+  },
+  {
+    href: "javascript:void()",
+    name: "About us",
+  },
+]);
 </script>

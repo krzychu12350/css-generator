@@ -80,8 +80,8 @@
             class="justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0"
           >
             <li
-              v-for="link in navigation"
-              :key="link.id"
+              v-for="(link, index) in navigation"
+              :key="index"
               class="text-gray-600 hover:text-indigo-600"
             >
               <a :href="link.router">
@@ -111,24 +111,18 @@
 }
 </style>
 
-<script>
-import { ref } from "vue";
-export default {
-  data: function () {
-    return {
-      navigation: [
-        { title: "Generators", router: "/generators" },
-        { title: "Pricing", router: "/pricing" },
-        { title: "Blog", router: "/blog" },
-      ],
-    };
-  },
-  setup() {
-    let open = ref(false);
-    function menuOpen() {
-      open.value = !open.value;
-    }
-    return { open, menuOpen };
-  },
-};
+<script setup lang="ts">
+import { ref, reactive } from "vue";
+
+const navigation = reactive([
+  { title: "Generators", router: "/generators" },
+  { title: "Pricing", router: "/pricing" },
+  { title: "Blog", router: "/blog" },
+]);
+
+let open = ref(false);
+
+function menuOpen() {
+  open.value = !open.value;
+}
 </script>

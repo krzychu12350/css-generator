@@ -77,59 +77,54 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "PricingComponent",
-  data() {
-    return {
-      plans: [
-        {
-          name: "Basic plan",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          price: 12,
-          isMostPop: false,
-          features: [
-            "Curabitur faucibus",
-            "massa ut pretium maximus",
-            "Sed posuere nisi",
-            "Pellentesque eu nibh et neque",
-            "Suspendisse a leo",
-            "Praesent quis venenatis ipsum",
-            "Duis non diam vel tortor",
-          ],
-        },
-        {
-          name: "Startup",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          price: 35,
-          isMostPop: true,
-          features: [
-            "Curabitur faucibus",
-            "massa ut pretium maximus",
-            "Sed posuere nisi",
-            "Pellentesque eu nibh et neque",
-            "Suspendisse a leo",
-            "Praesent quis venenatis ipsum",
-            "Duis non diam vel tortor",
-          ],
-        },
-        {
-          name: "Enterprise",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          price: 60,
-          isMostPop: false,
-          features: [
-            "Curabitur faucibus",
-            "massa ut pretium maximus",
-            "Sed posuere nisi",
-            "Pellentesque eu nibh et neque",
-            "Suspendisse a leo",
-            "Praesent quis venenatis ipsum",
-            "Duis non diam vel tortor",
-          ],
-        },
-      ],
-    };
+<script setup lang="ts">
+import { reactive } from "vue";
+
+const plans = reactive([
+  {
+    name: "Basic plan",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 12,
+    isMostPop: false,
+    features: [
+      "Curabitur faucibus",
+      "massa ut pretium maximus",
+      "Sed posuere nisi",
+      "Pellentesque eu nibh et neque",
+      "Suspendisse a leo",
+      "Praesent quis venenatis ipsum",
+      "Duis non diam vel tortor",
+    ],
   },
-};
+  {
+    name: "Startup",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 35,
+    isMostPop: true,
+    features: [
+      "Curabitur faucibus",
+      "massa ut pretium maximus",
+      "Sed posuere nisi",
+      "Pellentesque eu nibh et neque",
+      "Suspendisse a leo",
+      "Praesent quis venenatis ipsum",
+      "Duis non diam vel tortor",
+    ],
+  },
+  {
+    name: "Enterprise",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 60,
+    isMostPop: false,
+    features: [
+      "Curabitur faucibus",
+      "massa ut pretium maximus",
+      "Sed posuere nisi",
+      "Pellentesque eu nibh et neque",
+      "Suspendisse a leo",
+      "Praesent quis venenatis ipsum",
+      "Duis non diam vel tortor",
+    ],
+  },
+]);
 </script>

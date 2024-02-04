@@ -15,7 +15,7 @@
           </p>
         </div>
       </div>
-      <form onSubmit="event.preventDefault()" class="mt-8 space-y-5">
+      <form class="mt-8 space-y-5">
         <div>
           <label class="font-medium">Email</label>
           <input
@@ -52,3 +52,5 @@
     </div>
   </main>
 </template>
+
+<script setup lang="ts"></script>
