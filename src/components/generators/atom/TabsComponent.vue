@@ -9,6 +9,7 @@
         :key="idx"
         class="data-[state=active]:bg-gray-100 data-[state=active]:text-gray-700 data-[state=active]:shadow-sm outline-gray-800 py-1.5 px-3 rounded-lg duration-150 text-gray-500 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-100 font-medium"
         :value="item"
+        @click="generateCode(item)"
       >
         {{ item }}
       </TabsTrigger>
@@ -35,24 +36,69 @@
         </option>
       </select>
     </div>
-    <TabsContent v-for="(item, idx) in tabItems" :key="idx" class="py-6" :value="item">
+    <TabsContent
+      v-for="(item, idx) in tabItems"
+      :key="idx"
+      class="py-6"
+      :value="item"
+      theme="light"
+    >
       <p class="text-xs leading-normal">
-        This is <b>{{ item }}</b> Tab
+        <!-- This is <b>{{ item }}</b> Tab Code: -->
+        {{ sourceCode }}
       </p>
+      <!-- <CodeEditor v-model="sourceCode" theme="atom-one-dark"></CodeEditor> -->
     </TabsContent>
   </TabsRoot>
+  <!-- <Editor
+    lang="css"
+    codeValue="{text-align: center}"
+    codeLines="true"
+    fontSize="10px"
+  ></Editor> -->
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+/*
+    codeValue="{
+    text-align: center
+}"
+*/
 // @ts-ignore
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "radix-vue";
+import { GradientGenerator } from "../../../services/GradientGenerator";
+//@ts-ignore
+import Editor from "./Editor.vue";
+// import hljs from "highlight.js";
+// @ts-ignore
+// import CodeEditor from "simple-code-editor";
 
 const selectedTab = ref("CSS");
-
+const sourceCode = ref("");
 const tabItems = ["CSS", "Tailwind", "React", "Vue", "Angular"];
 
 // const handleTabChange = (e: any) => {
+//   console.log("tes");
 //   selectedTab.value = e.target.value;
 // };
+
+function generateCode(technology: string) {
+  // alert(technology);
+  if (technology === "CSS") {
+    sourceCode.value = GradientGenerator.generateCss();
+  } else if (technology === "Tailwind") {
+    sourceCode.value = GradientGenerator.generateTailwindCode();
+  } else if (technology === "React") {
+    sourceCode.value = GradientGenerator.generateReactComponentCode();
+  } else if (technology === "Vue") {
+    sourceCode.value = GradientGenerator.generateVueComponentCode();
+  } else if (technology === "Angular") {
+    sourceCode.value = GradientGenerator.generateAngularComponentCode();
+  }
+}
+
+onMounted(() => {
+  sourceCode.value = GradientGenerator.generateCss();
+});
 </script>
