@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import AnimatedGradient from "./AnimatedGradient.vue";
+import AnimatedGradient from "../common/AnimatedGradient.vue";
 </script>

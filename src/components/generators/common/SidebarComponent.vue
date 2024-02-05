@@ -59,11 +59,13 @@ import useEventsBus from "../../../composables/eventBus";
 import { reactive, onMounted } from "vue";
 
 const { emit } = useEventsBus();
-
+// https://deepmind.google/technologies/gemini/#build-with-gemini
 const tabs = reactive([
   { name: "Static Gradient", current: false },
   { name: "Animated Gradient", current: false },
   { name: "Custom Shape", current: false },
+  { name: "3D Animated Shape", current: false },
+  { name: "Gradient Animated Font", current: false },
 ]);
 
 function changeCurrentTab(tab: { name: string }, index: number) {
