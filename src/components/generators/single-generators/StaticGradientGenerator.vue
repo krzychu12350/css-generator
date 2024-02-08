@@ -5,6 +5,10 @@
     </template>
 
     <template v-slot:config-panel>
+      <div class="flex">
+        <Button text="Linear"></Button>
+        <Button text="Radical"></Button>
+      </div>
       <ColorPickerComponent></ColorPickerComponent>
       <!-- <DirectionPickerComponent></DirectionPickerComponent> -->
       <Slider
@@ -12,14 +16,16 @@
         label="Directon"
         @valueChanged="handleChangedDirection"
       ></Slider>
-      <Slider
+      <!-- <Slider
         :initialValue="10"
         label="Speed"
         @valueChanged="handleChangedSpeed"
-      ></Slider>
-      <Slider :initialValue="10" label="Zoom" @valueChanged="handleChangedZoom"></Slider>
-      <Button text="Generate"></Button>
-      <Button text="Save as"></Button>
+      ></Slider> -->
+      <!-- <Slider :initialValue="10" label="Zoom" @valueChanged="handleChangedZoom"></Slider> -->
+      <div class="flex justify-between">
+        <Button text="Generate"></Button>
+        <Button text="Save as"></Button>
+      </div>
     </template>
 
     <template v-slot:source-config-panel>
@@ -56,7 +62,7 @@ const handleChangedSpeed = (newValue: number) => {
 
 const handleChangedDirection = (newValue: number) => {
   direction.value = newValue;
-  console.log("Current speed value" + direction.value);
+  console.log("Current direction value" + direction.value);
 };
 
 const colors = ref<string[]>(["#ff8a00", "#e52e71", "#0075ff"]);
