@@ -1,18 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-// @ts-ignore
-import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from "radix-vue";
-
-const sliderValue = ref([50]);
-const props = defineProps({
-  label: {
-    type: String,
-    required: true,
-    default: () => "",
-  },
-});
-</script>
-
 <template>
   <div class="flex p-4">
     <!-- <h1>{{ sliderValue }}</h1> -->
@@ -25,6 +10,7 @@ const props = defineProps({
         class="relative flex items-center select-none touch-none w-[200px] h-5"
         :max="100"
         :step="1"
+        @change="emitValue"
       >
         <SliderTrack class="bg-blackA10 relative grow rounded-full h-[3px]">
           <SliderRange class="absolute bg-white rounded-full h-full" />
@@ -37,3 +23,35 @@ const props = defineProps({
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref, watch, defineEmits } from "vue";
+// @ts-ignore
+import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from "radix-vue";
+
+const props = defineProps({
+  label: {
+    type: String,
+    required: true,
+    default: () => "",
+  },
+  initialValue: {
+    type: Number,
+    required: true,
+    default: () => 0,
+  },
+});
+
+const emit = defineEmits(["valueChanged"]);
+
+const sliderValue = ref<any>([props.initialValue]);
+
+watch(sliderValue, (newValue) => {
+  // console.log("Input value changed from", oldValue, "to", newValue);
+  emitValue(newValue[0]);
+});
+
+const emitValue = (newValue: any) => {
+  emit("valueChanged", newValue);
+};
+</script>
