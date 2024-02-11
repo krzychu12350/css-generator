@@ -2,7 +2,7 @@
   <div class="flex p-4">
     <!-- <h1>{{ sliderValue }}</h1> -->
     <div>
-      <h1 class="text-white">{{ props.label }} - {{ sliderValue }}</h1>
+      <h1 class="text-white">{{ props.label }} - {{ sliderValue[0] }}%</h1>
     </div>
     <div class="ml-4">
       <SliderRoot
